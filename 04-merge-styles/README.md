@@ -1,4 +1,4 @@
-## Сборка css бандла
+## Сборка css
 
 В файле **index.js** директории **04-merge-styles** напишите скрипт собирающий в единый файл содержимое папки css. Выходной файл должен носить имя **bundle.css** и находиться внутри папки **project-dist**.
 
@@ -20,4 +20,4 @@
 3. Чтение содержимого папки **css**
 4. Направление содержимого каждого файла с расширением **.css** в поток записи **bundle.css**.
 
-Для наглядного эффекта работы вашего скрипта рекомендую установить в vscode расширение [Life Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) и запустить с его помощью файл **index.html** находящийся в директории **project-dist**.
+Для наглядного эффекта работы вашего скрипта рекомендую установить в vscode расширение [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) и запустить с его помощью файл **index.html** находящийся в директории **project-dist**.
