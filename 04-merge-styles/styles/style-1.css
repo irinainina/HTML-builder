@@ -1,118 +1,94 @@
-:root {
-  --mercury-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/mercury2.jpg);
-  --mercury-tilt: rotate(0.034deg);
-  --mercury-day: 1407.6;
-  --mercury-color: #999999;
-  --venus-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/venus2.jpg);
-  --venus-tilt: rotate(177.3deg);
-  --venus-day: 5832.5;
-  --venus-color: #e8cda2;
-  --earth-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/earth.jpg);
-  --earth-tilt: rotate(23.26deg);
-  --earth-day: 23.9;
-  --earth-color: #b3caff;
-  --mars-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/mars.jpg);
-  --mars-tilt: rotate(25.2deg);
-  --mars-day: 24.6;
-  --mars-color: #c07158;
-  --jupiter-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/jupiter.jpg);
-  --jupiter-tilt: rotate(3.1deg);
-  --jupiter-day: 9.9;
-  --jupiter-color: #c9b5a4;
-  --saturn-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/saturn.jpg);
-  --saturn-tilt: rotate(26.7deg);
-  --saturn-day: 10.7;
-  --saturn-color: #f0e2c4;
-  --uranus-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/uranus2.jpg);
-  --uranus-tilt: rotate(97.8deg);
-  --uranus-day: 17.2;
-  --uranus-color: #b8d8e1;
-  --neptune-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/neptune.jpg);
-  --neptune-tilt: rotate(28.3deg);
-  --neptune-day: 16.1;
-  --neptune-color: #5e73bb;
-  --pluto-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/pluto.jpg);
-  --pluto-tilt: rotate(122.5deg);
-  --pluto-day: 153.3;
-  --pluto-color: #c3b6aa;
-  --sun-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/332937/sun.jpg);
-  --sun-tilt: rotate(0deg);
-  --sun-day: 600;
-  --sun-color: #cc9f4c;
-}
-
-@keyframes planetRotate {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: -200% center;
-  }
-}
-body {
-  background: #000000;
-  color: #fff;
-  height: 100%;
-  width: 100vw;
-  margin: 10px 0 40px 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 190px);
-  grid-template-rows: repeat(auto-fill, 400px);
-  grid-gap: 40px;
-  align-items: center;
-  justify-items: center;
-  justify-content: center;
-  overflow-x: hidden;
-  font-family: "Major Mono Display";
-  text-transform: lowercase;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.container {
   position: relative;
-}
-.card--mercury .planet__atmosphere {
-  box-shadow: inset 10px 0px 12px -2px rgba(255, 255, 255, 0.2), inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--mercury-color);
-}
-.card--mercury .planet__surface {
-  background-image: var(--mercury-image);
-  transform: var(--mercury-tilt) scale(1.2);
-  animation: planetRotate calc(var(--mercury-day)*.1s) linear infinite;
-}
-.card--mercury .card__planet::before {
-  transform: var(--mercury-tilt) scale(1.2);
-  border-color: var(--mercury-color);
-  color: var(--mercury-color);
-}
-.card--mercury .tilt__icon {
-  transform: var(--mercury-tilt);
-  color: var(--mercury-color);
-}
-.card--venus .planet__atmosphere {
-  box-shadow: inset 10px 0px 12px -2px rgba(255, 255, 255, 0.2), inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--venus-color);
-}
-.card--venus .planet__surface {
-  background-image: var(--venus-image);
-  transform: var(--venus-tilt) scale(1.2);
-  animation: planetRotate calc(var(--venus-day)*.1s) linear infinite;
-}
-.card--venus .card__planet::before {
-  transform: var(--venus-tilt) scale(1.2);
-  border-color: var(--venus-color);
-  color: var(--venus-color);
-}
-.card--venus .tilt__icon {
-  transform: var(--venus-tilt);
-  color: var(--venus-color);
-}
-.card--earth .planet__atmosphere {
-  box-shadow: inset 10px 0px 12px -2px rgba(255, 255, 255, 0.2), inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--earth-color);
-}
-.card--earth .planet__surface {
-  background-image: var(--earth-image);
-  transform: var(--earth-tilt) scale(1.2);
-  animation: planetRotate calc(var(--earth-day)*.1s) linear infinite;
+  width: 300px;
+  height: 300px;
+  margin: 100px auto;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: daylight 15s ease infinite;
+          animation: daylight 15s ease infinite;
+  border-radius: 50%;
+  border: 10px solid #fff;
+  border: 10px solid #000;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 0 15px rgba(0, 0, 0, 0.05), inset 0 0 0 30px rgba(0, 0, 0, 0.05), inset 0 0 0 45px rgba(0, 0, 0, 0.05), inset 0 0 0 60px rgba(0, 0, 0, 0.05), inset 0 0 0 75px rgba(0, 0, 0, 0.05), inset 0 0 0 90px rgba(0, 0, 0, 0.05);
 }
 
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(to bottom, #fecf4e 1%, #a62a44 50%, #310441 100%);
+  border-radius: 50%;
+  transform: rotate(-15deg) translate(-35%, -55%);
+}
+
+@supports not ((-webkit-clip-path: inset(50% 0 0 0)) or (clip-path: inset(50% 0 0 0))) {
+  .ring-before,
+.ring-after,
+.ring-bigger-before,
+.ring-bigger-after {
+    display: none;
+  }
+}
+.ring-before,
+.ring-after,
+.ring-bigger-before,
+.ring-bigger-after {
+  content: "";
+  width: 126px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid rgba(248, 197, 77, 0.8);
+  position: absolute;
+  top: 125px;
+  left: 84px;
+  transform: skew(-54deg);
+}
+
+.ring-bigger-before,
+.ring-bigger-after {
+  transform: skew(-54deg) scale(1.3);
+  border-color: #d3bc68;
+}
+
+.ring-before,
+.ring-bigger-before {
+  z-index: 3;
+  -webkit-clip-path: inset(50% 0 0 0);
+          clip-path: inset(50% 0 0 0);
+}
+
+.ring-after,
+.ring-bigger-after {
+  z-index: 1;
+  -webkit-clip-path: inset(0 0 50% 0);
+          clip-path: inset(0 0 50% 0);
+}
+
+.sub-planet {
+  position: absolute;
+  top: 24%;
+  left: 75%;
+  z-index: 4;
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(to bottom, #70a27d 1%, #4552a1 50%, #371a6a 100%);
+  border-radius: 50%;
+  transform: rotate(-15deg);
+}
+
+.orbit {
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+}

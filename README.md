@@ -22,4 +22,4 @@
 [03 Вывод информации о файлаx хранящихся в папке](03-files-in-folder/README.md)  
 [04 Сборка css](04-merge-styles/README.md)  
 [05 Сборка HTML](05-merge-html/README.md)  
-[05 Сборка статической страницы](06-html-builder/README.md)  
+[06 Сборка статической страницы](06-html-builder/README.md)  

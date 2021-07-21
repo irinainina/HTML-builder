@@ -1,92 +1,124 @@
-.card--pluto .planet__surface {
-  background-image: var(--pluto-image);
-  transform: var(--pluto-tilt) scale(1.2);
-  animation: planetRotate calc(var(--pluto-day)*.1s) linear infinite;
+body {
+  background: #fafaf0;
+  background: #121317;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-.card--pluto .card__planet::before {
-  transform: var(--pluto-tilt) scale(1.2);
-  border-color: var(--pluto-color);
-  color: var(--pluto-color);
+.star {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 1px;
+  height: 1px;
+  background-color: white;
+  -webkit-animation: shooting 5s linear infinite;
+          animation: shooting 5s linear infinite;
 }
-.card--pluto .tilt__icon {
-  transform: var(--pluto-tilt);
-  color: var(--pluto-color);
-}
-.card--sun .planet__atmosphere {
-  box-shadow: inset 10px 0px 12px -2px rgba(255, 255, 255, 0.2), inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--sun-color);
-}
-.card--sun .planet__surface {
-  background-image: var(--sun-image);
-  transform: var(--sun-tilt) scale(1.2);
-  animation: planetRotate calc(var(--sun-day)*.1s) linear infinite;
-}
-.card--sun .card__planet::before {
-  transform: var(--sun-tilt) scale(1.2);
-  border-color: var(--sun-color);
-  color: var(--sun-color);
-}
-.card--sun .tilt__icon {
-  transform: var(--sun-tilt);
-  color: var(--sun-color);
-}
-
-.card__planet::before {
+.star:before {
   content: "";
   position: absolute;
-  height: 190px;
-  z-index: -2;
-  left: 50%;
-  top: 0%;
-  border-left: 1px dashed rgba(255, 255, 255, 0.25);
+  width: 100px;
+  height: 1px;
+  right: 1px;
+  top: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.4) 100%);
 }
 
-.planet__atmosphere {
-  height: 190px;
-  width: 190px;
-  position: relative;
-  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 65%);
-  border-radius: 100px;
-  overflow: hidden;
+.star-2 {
+  top: 100px;
+  -webkit-animation: shooting 8s 1s linear infinite;
+          animation: shooting 8s 1s linear infinite;
 }
-.planet__surface {
+
+.star-3 {
+  top: 250px;
+  -webkit-animation: shooting 3s 2s linear infinite;
+          animation: shooting 3s 2s linear infinite;
+}
+
+@-webkit-keyframes daylight {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes daylight {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-webkit-keyframes shooting {
+  from {
+    left: -100px;
+  }
+  to {
+    left: calc(100% + 100px);
+  }
+}
+@keyframes shooting {
+  from {
+    left: -100px;
+  }
+  to {
+    left: calc(100% + 100px);
+  }
+}
+
+
+.cloud-group-1,
+.cloud-group-2,
+.cloud-group-3 {
   position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  background-size: cover;
+  bottom: 0;
+  width: 211px;
+  height: 100px;
+  opacity: 0.2;
 }
 
-.card--sun .planet__atmosphere {
-  box-shadow: 0px 0px 10px 0px var(--sun-color), 0px 0px 1000px -2px var(--sun-color);
+.cloud-group-1 {
+  bottom: -5px;
 }
 
-.card__info {
-  width: 100%;
+.cloud-group-2 {
+  transform: scale(2);
+  bottom: 20px;
+  left: -50px;
 }
 
-.info__title {
-  text-align: center;
-  font-size: 28px;
+.cloud-group-3 {
+  transform: scale(3);
+  bottom: 100px;
+  left: -24px;
 }
-.info__form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+.cloud-2 {
+  left: 10px;
 }
-.info__item {
-  display: flex;
-  align-items: flex-end;
-  margin-bottom: 5px;
-  font-size: 14px;
+
+.cloud-3 {
+  right: 10px;
 }
-.info__item .tilt__icon {
-  margin: 0 5px;
+
+.cloud-4 {
+  right: 184px;
+  bottom: 0;
 }
-.info__label {
-  font-size: 11px;
-}
-.info__line {
-  flex: 1;
-  margin: 0 5px;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+
+.cloud-5 {
+  right: 24px;
+  bottom: 12px;
 }
